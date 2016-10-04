@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 namespace _09_Portfolio {
     internal class Portfolio {
-        private List<IAsset> stocks;
-
+        private List<IAsset> stocks = new List<IAsset>();
         public Portfolio() {
         }
 
@@ -13,11 +12,15 @@ namespace _09_Portfolio {
         }
 
         internal double GetTotalValue() {
-            return ;
+            double res = 0;
+            for (int i = 0; i < stocks.Count; i++) {
+                res += stocks[i].GetValue();
+            }
+            return res;
         }
 
-        internal void AddAsset(IAsset stockHP) {
-            throw new NotImplementedException();
+        internal void AddAsset(IAsset asset) {
+            stocks.Add(asset);
         }
     }
 }
