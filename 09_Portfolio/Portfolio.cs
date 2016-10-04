@@ -18,6 +18,13 @@ namespace _09_Portfolio {
             }
             return res;
         }
+        public static double TotalValue(IAsset[] stocks) {
+            double res = 0;
+            for (int i = 0; i < stocks.Length; i++) {
+                res += stocks[i].GetValue();
+            }
+            return res;
+        }
 
         internal void AddAsset(IAsset asset) {
             stocks.Add(asset);
